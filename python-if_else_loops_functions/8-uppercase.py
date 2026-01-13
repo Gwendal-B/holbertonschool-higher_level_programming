@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 def uppercase(str):
+    """Print a string in uppercase followed by a new line."""
+    result = ""
     for c in str:
         if 'a' <= c <= 'z':
-            print("{}".format(chr(ord(c) - 32)), end="")
+            result += chr(ord(c) - 32)
         else:
-            print("{}".format(c), end="")
-    print()
+            result += c
+    print("{}".format(result))
