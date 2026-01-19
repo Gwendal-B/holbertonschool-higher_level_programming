@@ -40,5 +40,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Holberton School for providing the curriculum and resources.
 - Contributors and mentors for their guidance and support.
 
-## Contact
-For any questions or feedback, please reach out to [your.email@example.com](mailto:your.email@example.com).
