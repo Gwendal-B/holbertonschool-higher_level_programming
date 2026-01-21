@@ -20,14 +20,14 @@ def text_indentation(text):
             i += 1
 
         line = ""
-        while i < len(text):
+        while i < len(text) and text[i] not in '.?:':
             line += text[i]
-            if text[i] in '.?:':
-                print(line.rstrip())
-                print()
-                i += 1
-                break
             i += 1
-        else:
-            if line.strip():
-                print(line.rstrip())
+
+        if line.strip():
+            print(line.rstrip(), end='')
+
+        if i < len(text) and text[i] in '.?:':
+            print(text[i])
+            print()
+            i += 1
