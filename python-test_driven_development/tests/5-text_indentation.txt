@@ -1,0 +1,47 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hello. How are you? I'm fine:")
+Hello.
+$
+How are you?
+$
+I'm fine:
+$
+
+>>> text_indentation("   Leading and trailing spaces.  Trimmed?  Yes:  ")
+Leading and trailing spaces.
+$
+Trimmed?
+$
+Yes:
+$
+
+>>> text_indentation("No special characters here")
+No special characters here
+$
+
+>>> # Edge case: multiple consecutive break characters
+>>> text_indentation("Wait... Really?? Yes::")
+Wait.
+$
+.
+$
+.
+$
+Really?
+$
+?
+$
+Yes:
+$
+:
+
+>>> # Edge case: empty string
+>>> text_indentation("")
+$
+
+>>> # TypeError test
+>>> try:
+...     text_indentation(123)
+... except TypeError as te:
+...     print(te)
+text must be a string
