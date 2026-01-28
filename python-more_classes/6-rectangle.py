@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module that defines a Rectangle class with instance counting."""
 
+
 class Rectangle:
     """Rectangle class."""
 
