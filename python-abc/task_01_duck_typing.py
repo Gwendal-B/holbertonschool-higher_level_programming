@@ -18,6 +18,7 @@ class Shape(ABC):
         """Return the perimeter of the shape."""
         pass
 
+
 class Circle(Shape):
     """Circle shape."""
 
@@ -29,6 +30,7 @@ class Circle(Shape):
 
     def perimeter(self):
         return 2 * math.pi * self.radius
+
 
 class Rectangle(Shape):
     """Rectangle shape."""
@@ -43,10 +45,10 @@ class Rectangle(Shape):
     def perimeter(self):
         return 2 * (self.width + self.height)
 
-def shape_info(shape):
-    """
-    Print area and perimeter of a shape.
-    Uses duck typing: no type checking.
-    """
-    print(f"Area: {shape.area()}")
-    print(f"Perimeter: {shape.perimeter()}")
+    def shape_info(shape):
+        """
+        Print area and perimeter of a shape.
+        Uses duck typing: no type checking.
+        """
+        print(f"Area: {shape.area()}")
+        print(f"Perimeter: {shape.perimeter()}")
