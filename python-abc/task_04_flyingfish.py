@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Module demonstrating multiple inheritance with Fish, Bird, and FlyingFish."""
+"""Module demonstrating multiple inheritance with Fish, Bird, and
+FlyingFish."""
+
 
 class Fish:
     def swim(self):
@@ -8,6 +10,7 @@ class Fish:
     def habitat(self):
         print("The fish lives in water")
 
+
 class Bird:
     def fly(self):
         print("The bird is flying")
@@ -15,12 +18,13 @@ class Bird:
     def habitat(self):
         print("The bird lives in the sky")
 
+
 class FlyingFish(Fish, Bird):
     def swim(self):
-            print("The flying fish is swimming !")
+        print("The flying fish is swimming !")
 
     def fly(self):
-            print("The flying fish is soaring!")
+        print(f"The flying fish is soaring!")
 
     def habitat(self):
-            print("The flying fish lives both in water and the sky!")
+        print("The flying fish lives both in water and the sky!")

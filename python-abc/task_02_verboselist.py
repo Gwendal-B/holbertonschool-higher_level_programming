@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Module defining a verbose list with notifications."""
 
+
 class VerboseList(list):
     """A list that prints notifications when modified."""
 
