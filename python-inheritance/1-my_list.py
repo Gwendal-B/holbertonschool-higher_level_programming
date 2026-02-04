@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-"""Defines a class MyList that inherits from list."""
+"""Defines MyList, a list subclass with a sorted display helper.
+
+This module provides MyList, which extends the built-in list type and adds
+a method to print the elements in ascending order without changing the object.
+"""
 
 
 class MyList(list):
-    """Custom list class that can print itself sorted."""
-
+    """List subclass that can print its elements sorted in ascending order."""
     def print_sorted(self):
-        """Prints the list sorted in ascending order."""
-        new_list = self[:]
-        new_list.sort()
-        print(new_list)
+        """Print the elements in ascending order without modifying the list."""
+        print(sorted(self))
