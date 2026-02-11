@@ -24,4 +24,4 @@ class Student:
                 for key, value in self.__dict__.items()
                 if key in attrs
             }
-        return self.__dict__
+        return dict(self.__dict__)
