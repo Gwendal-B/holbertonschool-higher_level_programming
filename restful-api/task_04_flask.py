@@ -7,7 +7,6 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-# IMPORTANT: dictionnaire VIDE pour le checker
 users = {}
 
 
