@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-"""Prints the first State object from the database hbtn_0e_6_usa using SQLAlchemy ORM.
-The first State is determined by the lowest id. If no State exists, prints 'Nothing'.
+"""
+Prints the first State object from the database hbtn_0e_6_usa 
+using SQLAlchemy ORM.
+The first State is determined by the lowest id. If no State 
+exists, prints 'Nothing'.
 """
 import sys
 from sqlalchemy import create_engine
