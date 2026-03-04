@@ -1,3 +1,4 @@
+-- Creates the table second_table and inserts 4 rows with id, name and score
 CREATE TABLE IF NOT EXISTS second_table (
 	id INT,
 	name VARCHAR(256),
