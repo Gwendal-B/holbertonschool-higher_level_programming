@@ -11,8 +11,8 @@ from model_state import Base, State
 
 if __name__ == "__main__":
     # Get arguments
-    user, password, db_name, state_name = sys.argv[1], sys.argv[2],
-    sys.argv[3], sys.argv[4]
+    user, password, db_name, state_name = sys.argv[1], sys.argv[2], \
+        sys.argv[3], sys.argv[4]
 
     # Connect to the MySQL server
     engine = create_engine(
