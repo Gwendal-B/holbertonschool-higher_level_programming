@@ -1,7 +1,3 @@
 #!/usr/bin/node
-
-// Création d'une constante avec le message
-const myVar = "JavaScript is amazing";
-
-// Affichage dans la console
+const myVar = 'JavaScript is amazing';
 console.log(myVar);
