@@ -1,0 +1,99 @@
+Everything is an Object in Python3: Mutable, Immutable, and More
+
+
+Illustration: Python treats everything as an object.
+
+Introduction
+
+Python is often described as a high-level, dynamically typed language. But one fundamental idea that underpins Python is that everything is an object—integers, strings, lists, functions, and even classes themselves. Understanding this concept helps explain many behaviors that beginners find confusing, such as why changing one variable can unexpectedly affect another, and how Python manages memory and object references.
+
+id and type
+
+Two essential functions for exploring Python objects are type() and id().
+
+type(obj) tells us the type of an object.
+x = 42
+print(type(x))  # <class 'int'>
+s = "Python"
+print(type(s))  # <class 'str'>
+id(obj) returns a unique identifier (memory address in CPython) for the object:
+a = [1, 2, 3]
+b = a
+print(id(a))  # e.g., 139926795932424
+print(id(b))  # same as id(a) because b references the same object
+Mutable Objects
+
+Mutable objects are objects whose content can change without changing their identity. Common mutable types include lists, dictionaries, sets, and custom objects.
+
+l1 = [1, 2, 3]
+l2 = l1
+l1.append(4)
+print(l2)  # [1, 2, 3, 4], l2 sees the change
+Here, both l1 and l2 point to the same object. Mutating it through one variable affects all references.
+Immutable Objects
+
+Immutable objects cannot be changed after they are created. Examples include integers, floats, strings, tuples, and frozensets.
+
+x = 10
+y = x
+x += 1
+print(y)  # 10, y remains unchanged
+Operations on immutable objects produce new objects, leaving the original intact.
+Why Does It Matter?
+
+Understanding mutability helps avoid subtle bugs. For example, using a mutable default argument in a function can lead to unexpected results:
+
+def append_item(lst=[]):
+    lst.append(1)
+    return lst
+
+print(append_item())  # [1]
+print(append_item())  # [1, 1] -> previous list reused!
+
+Python treats mutable and immutable objects differently for memory management and function arguments, which can affect performance and program correctness.
+
+How Arguments Are Passed to Functions
+
+Python uses “pass-by-object-reference” (sometimes called pass-by-assignment).
+
+Mutable objects: Functions can modify the original object.
+def increment_list(lst):
+    lst.append(4)
+
+l = [1, 2, 3]
+increment_list(l)
+print(l)  # [1, 2, 3, 4]
+Immutable objects: Functions cannot modify the original object. Assignments inside the function create new objects.
+def increment(n):
+    n += 1
+
+a = 1
+increment(a)
+print(a)  # 1, original integer unchanged
+Advanced Observations from the Project
+Using += with lists modifies in place, but using + creates a new object:
+l = [1, 2, 3]
+id_before = id(l)
+l += [4]
+print(id(l) == id_before)  # True
+l = l + [5]
+print(id(l) == id_before)  # False
+Small integers and empty tuples are interned in CPython, meaning identical values can share the same memory.
+a = 1
+b = 1
+print(a is b)  # True
+empty1 = ()
+empty2 = ()
+print(empty1 is empty2)  # True
+
+Understanding these details makes Python’s object model less mysterious and improves debugging and design of programs.
+
+Next Steps
+Experiment with mutable vs immutable types
+Observe id() changes with various operations
+Test behavior with function arguments
+
+URLs (to add after publishing):
+
+Blog post: <Your Medium/LinkedIn URL>
+LinkedIn post sharing: <LinkedIn URL>
